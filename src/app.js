@@ -50,7 +50,7 @@ app.get("/weather", (req, res) => {
                     error: error
                 })
             }
-            weatherstack({latitude,longitude}, "m", (error, {weather_descriptions:desc, temperature:temp, feelslike:feels} = {}) => {
+            weatherstack({latitude,longitude}, "m", (error, {weather_descriptions:desc, temperature:temp, feelslike:feels, observation_time:time} = {}) => {
                 if(error) {
                     return res.send({
                         error: error
@@ -63,7 +63,8 @@ app.get("/weather", (req, res) => {
                     },
                     address: address,
                     temperature:temp,
-                    feelslike:feels
+                    feelslike:feels, 
+                    observation_time:time
                 })
             })
             

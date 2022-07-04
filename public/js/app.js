@@ -19,7 +19,8 @@ weatherForm.addEventListener("submit",(e)=>{
                Longitude: ${data.location.longitude}<br>
             Temperatura: ${data.temperature}<br>
             Sensação termica: ${data.feelslike}<br>
-            Previsão: ${data.forecast}
+            Previsão: ${data.forecast}<br><br>
+            (Hora da observação: ${data.observation_time})
         `
     })
 })
